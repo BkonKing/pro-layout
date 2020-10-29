@@ -68,8 +68,16 @@ const renderIcon = (h, icon) => {
     return null
   }
   const props = {}
-  typeof (icon) === 'object' ? (props.component = icon) : (props.type = icon)
-  return <Icon {...{ props }} />
+  if (typeof (icon) === 'object') {
+    props.component = icon
+  } else {
+    if (/(http)|(https)|([\/]{2,})/.test(icon)) {
+      return <img class="anticon ant-menu-item__img" src={icon} />
+    } else {
+      props.type = icon
+      return <Icon {...{ props }} />
+    }
+  }
 }
 
 const renderTitle = (h, title, i18nRender) => {

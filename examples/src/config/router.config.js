@@ -59,7 +59,7 @@ const asyncRouterMap = [
             name: 'basic-form',
             meta: {
               keepAlive: true,
-              icon: 'smile',
+              icon: 'https://pro.antdv.com/logo.png',
               title: 'menu.form.basicform'
             },
             component: () => import(/* webpackChunkName: "about" */ '../views/form/basic-form')

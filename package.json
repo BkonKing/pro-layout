@@ -1,15 +1,10 @@
 {
-    "name": "@ant-design-vue/pro-layout",
-    "version": "1.0.1",
+    "name": "@xx/ant-design-vue-pro-layout",
+    "version": "1.0.0",
     "main": "./lib/index.js",
     "module": "./es/index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/vueComponent/pro-layout"
-    },
     "contributors": [
-        "tangjinzhou <415800467@qq.com>",
-        "Sendya <yladmxa@gmail.com>"
+        "hbk <1810972990@qq.com>"
     ],
     "license": "MIT",
     "scripts": {
@@ -33,6 +28,7 @@
     "devDependencies": {
         "@ant-design-vue/tools": "^1.0.2-beta.2",
         "@babel/core": "^7.11.1",
+        "@babel/plugin-syntax-jsx": "^7.12.1",
         "@babel/plugin-transform-runtime": "^7.5.5",
         "@babel/preset-env": "^7.5.5",
         "@types/jest": "^24.0.17",
