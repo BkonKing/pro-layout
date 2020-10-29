@@ -1,5 +1,5 @@
 {
-    "name": "@xx/ant-design-vue-pro-layout",
+    "name": "xx-ant-design-vue-pro-layout",
     "version": "1.0.2",
     "main": "./lib/index.js",
     "module": "./es/index.js",
