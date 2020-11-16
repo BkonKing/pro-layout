@@ -137,10 +137,10 @@ const RouteMenu = {
   methods: {
     updateMenu () {
       const routes = this.$route.matched.concat()
-      const { hidden } = this.$route.meta
+      const { hidden, selectedKey } = this.$route.meta
       if (routes.length >= 3 && hidden) {
         routes.pop()
-        this.selectedKeys = [routes[routes.length - 1].path]
+        this.selectedKeys = selectedKey ? [selectedKey] : [routes[routes.length - 1].path]
       } else {
         this.selectedKeys = [routes.pop().path]
       }
