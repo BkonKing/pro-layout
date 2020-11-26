@@ -23,6 +23,7 @@ export const SiderMenuProps = {
   fixSiderbar: PropTypes.bool,
   logo: PropTypes.any,
   title: PropTypes.string.def(''),
+  menuHidden: PropTypes.bool.def(false),
   // render function or vnode
   menuHeaderRender: PropTypes.oneOfType([PropTypes.func, PropTypes.array, PropTypes.object, PropTypes.bool]),
   menuRender: PropTypes.oneOfType([PropTypes.func, PropTypes.array, PropTypes.object, PropTypes.bool]),
@@ -85,7 +86,8 @@ const SiderMenu = {
       onMenuHeaderClick = () => null,
       i18nRender,
       menuHeaderRender,
-      menuRender
+      menuRender,
+      menuHidden
     } = this
     const siderCls = ['ant-pro-sider-menu-sider']
     if (fixSiderbar) siderCls.push('fix-sider-bar')
@@ -103,7 +105,7 @@ const SiderMenu = {
       class={siderCls}
       breakpoint={'lg'}
       trigger={null}
-      width={siderWidth}
+      width={menuHidden ? 0 : siderWidth}
       theme={theme}
       collapsible={collapsible}
       collapsed={collapsed}

@@ -13,6 +13,7 @@ export const GlobalHeaderProps = {
   isMobile: PropTypes.bool.def(false),
   fixedHeader: PropTypes.bool.def(false),
   logo: PropTypes.any,
+  menuHidden: PropTypes.bool.def(false),
   menuRender: PropTypes.any,
   collapsedButtonRender: PropTypes.any,
   headerContentRender: PropTypes.any,
@@ -37,14 +38,15 @@ const GlobalHeader = {
       const {
         collapsed,
         collapsedButtonRender = defaultRenderCollapsedButton,
-        menuRender
+        menuRender,
+        menuHidden
       } = this.$props
       if (collapsedButtonRender !== false && menuRender !== false) {
-        return (
+        return !menuHidden ? (
           <span class="ant-pro-global-header-trigger" onClick={toggle}>
             {isFun(collapsedButtonRender) && collapsedButtonRender(h, collapsed) || collapsedButtonRender}
           </span>
-        )
+        ) : <span class="ant-pro-global-header-trigger"></span>
       }
       return null
     }
